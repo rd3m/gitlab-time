@@ -106,15 +106,9 @@ def main(project_id, issue_number):
     """Calculates how long a 'Doing' label was on a GitLab issue"""
 
     token = os.getenv("GITLAB_TOKEN")
-    group_id = os.getenv("GITLAB_GROUP_ID")
 
-    if not all([token, group_id]):
-        missing_vars = []
-        if not token:
-            missing_vars.append("GITLAB_TOKEN")
-        if not group_id:
-            missing_vars.append("GITLAB_GROUP")
-        print(f"Error: Missing environment variable(s): {', '.join(missing_vars)}.")
+    if not token:
+        print("Error: Missing environment variable: GITLAB_TOKEN")
         return
 
     client = Gitlab(private_token=token)

@@ -23,11 +23,10 @@ source venv/bin/activate
 pip install -r requirements.txt
 ```
 
-3. Create a .env file in the project root with your GitLab token and Group ID:
+3. Create a .env file in the project root with your GitLab token:
 
 ```bash
 GITLAB_TOKEN=your_gitlab_token
-GITLAB_GROUP_ID=your_group_id
 ```
 
 ## Usage
